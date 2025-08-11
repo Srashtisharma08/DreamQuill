@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DreamQuill</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header Section -->
+<header class="main-header">
+  <div class="auth-settings-wrapper">
+    
+    <!-- Auth Buttons -->
+    <div class="auth-container">
+      <button class="auth-button">Sign Up / Log In</button>
+      <div class="auth-dropdown">
+        <a href="signup.html">Sign Up</a>
+        <a href="login.html">Log In</a>
+      </div>
+    </div>
+
+    <!-- Settings Button -->
+    <div class="settings-container">
+      <button class="settings-button">⚙️</button>
+      <div class="settings-dropdown">
+        <label>
+          Theme:
+          <select id="themeToggle">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="sepia">Sepia</option>
+          </select>
+        </label>
+
+        <label>
+          Font Size:
+          <select id="fontSizeToggle">
+            <option value="small">Small</option>
+            <option value="medium" selected>Medium</option>
+            <option value="large">Large</option>
+          </select>
+        </label>
+
+        <label>
+          Accessibility:
+          <input type="checkbox" id="highContrastToggle" />
+          High Contrast
+        </label>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- Help Button (Top-Left Corner) -->
+<div class="help-corner">
+  <a href="help.html" class="help-button">❓Help</a>
+</div>
+
+<!-- Library Button -->
+<div class="library-container">
+  <a href="library.html" class="library-button">📚 Library</a>
+</div>
+
+  <!--  Main Content -->
+  <h1 class="title">DreamQuill</h1>
+  <h2 class="genre-title">Select the Genre</h2>
+
+  <div class="genre-container">
+    <a href="sci-fi.html" class="genre-btn" data-genre="sci-fi" title="Explore futuristic worlds, alien tech, and cosmic mysteries"></a>
+    <a href="romance.html" class="genre-btn" data-genre="romance" title="Fall into tales of love, longing, and emotional connection"></a>
+    <a href="mystery.html" class="genre-btn" data-genre="mystery" title="Unravel secrets, clues, and shadowy twists of fate"></a>
+    <a href="thriller.html" class="genre-btn" data-genre="thriller" title="Expect suspense, danger, and twists"></a>
+    <a href="fantasy.html" class="genre-btn" data-genre="fantasy" title="Enter enchanted realms of magic, myths, and heroic quests"></a>
+    <a href="horror.html" class="genre-btn" data-genre="horror" title="Face your fears in chilling, supernatural nightmares"></a>
+    <a href="adventure.html" class="genre-btn" data-genre="adventure" title="Embark on daring journeys through wild and wondrous lands"></a>
+    <a href="historical.html" class="genre-btn" data-genre="historical" title="Travel through time with stories rooted in the past"></a>
+    <a href="comedy.html" class="genre-btn" data-genre="comedy" title="Laugh through quirky characters and unexpected antics"></a>
+    <a href="drama.html" class="genre-btn" data-genre="drama" title="Dive into deep emotions, conflict, and human complexity"></a>
+  </div>
+
+  <!--  JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

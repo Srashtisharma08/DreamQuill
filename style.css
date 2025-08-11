@@ -1,0 +1,447 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  background: url('img/dreamquill-bg.png') center center/cover no-repeat;
+  transition: background-color 0.4s ease, color 0.4s ease; /* Smooth theme transitions */
+}
+
+.title {
+  text-align: center;
+  font-size: 48px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.genre-title {
+  color: #d176a4;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.genre-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+.genre-btn {
+  width: 220px;
+  height: 100px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.genre-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
+.genre-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Genre Backgrounds */
+[data-genre="romance"]    { background-image: url('img/Romance.png');}
+[data-genre="sci-fi"]     { background-image: url('img/Sci-Fi1.png');}
+[data-genre="fantasy"]    { background-image: url('img/Fiction.png');}
+[data-genre="mystery"]    { background-image: url('img/Mystery1.png');}
+[data-genre="thriller"]   { background-image: url('img/thriller1.png');}
+[data-genre="horror"]     { background-image: url('img/horror1.png');}
+[data-genre="adventure"]  { background-image: url('img/adventure1.png');}
+[data-genre="historical"] { background-image: url('img/historical1.png');}
+[data-genre="comedy"]     { background-image: url('img/Comedy1.png');}
+[data-genre="drama"]      { background-image: url('img/Drama1.png');}
+
+/*Code for all the Prompt pages....*/
+
+.prompt-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Genre-specific backgrounds */
+.horror-theme {
+  background: url('img/horror-bg.png') center center/cover no-repeat;
+}
+
+.sci-fi-theme {
+  background: url('img/sci-fi-bg.png') center center/cover no-repeat;
+}
+
+.romance-theme {
+  background: url('img/rom.jpeg') center center/cover no-repeat;
+}
+
+.mystery-theme {
+  background: url('img/mystery-b.png') center center/cover no-repeat;
+}
+
+.thriller-theme {
+  background: url('img/thriller.bg.png') center center/cover no-repeat;
+}
+
+.fiction-theme {
+  background: url('img/fiction-bg2.png') center center/cover no-repeat;
+}
+
+.adventure-theme {
+  background: url('img/adventure.bg.png') center center/cover no-repeat;
+}
+
+.historical-theme {
+  background: url('img/historical-bg.png') center center/cover no-repeat;
+}
+
+.comedy-theme {
+  background: url('img/comedy-bg.jpg') center center/cover no-repeat;
+}
+
+.drama-theme {
+  background: url('img/drama-bg.png') center center/cover no-repeat;
+}
+
+.prompt-title {
+  font-size: 36px;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.prompt-input {
+  width: 60%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+.generate-btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #4b2e83;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.generate-btn:hover {
+  background-color: #6a4fb3;
+}
+
+/* Container for positioning */
+.auth-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  display: inline-block;
+}
+
+/* Main button styling */
+.auth-button {
+  background-color: #ffffff;
+  color: #333;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Dropdown menu hidden by default */
+.auth-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  z-index: 1;
+}
+
+/* Dropdown links */
+.auth-dropdown a {
+  color: #333;
+  padding: 10px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Hover effect */
+.auth-dropdown a:hover {
+  background-color: #eaeaea;
+}
+
+/* Show dropdown on hover */
+.auth-container:hover .auth-dropdown {
+  display: block;
+}
+
+/*log in and sign up page style.......................................*/
+
+.form-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.form-container h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.form-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.form-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4b0082;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.form-container button:hover {
+  background-color: #6a0dad;
+}
+
+/*setting button style...........................................................................*/
+
+.settings-container {
+  position: relative;
+  display: inline-block;
+}
+
+.settings-button {
+  background-color: #444;
+  color: #fff;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.settings-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #222;
+  color: #fff;
+  padding: 12px;
+  border-radius: 6px;
+  z-index: 100;
+  width: 200px;
+}
+
+.settings-container:hover .settings-dropdown {
+  display: block;
+}
+
+.settings-dropdown label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+/*theme style..........................................................................*/
+
+body.light {
+  background-color: #fdfdfd;
+  color: #222;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #eee;
+}
+
+body.sepia {
+  background-color: #f4ecd8;
+  color: #5b4636;
+}
+
+body.high-contrast {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+body.high-contrast a {
+  color: #0ff !important;
+  text-decoration: underline;
+}
+
+/*positioning the setting button beside signup....................................................*/
+
+.auth-settings-wrapper {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+  z-index: 10;
+}
+
+.auth-button,
+.settings-button {
+  background-color: #ffffff; /* White background */
+  color: #333;               /* Dark text */
+  padding: 10px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.auth-button:hover,
+.settings-button:hover {
+  background-color: #f0f0f0; /* Light gray on hover */
+}
+
+
+.auth-container,
+.settings-container {
+  min-width: 120px;
+  position: relative;
+}
+
+/*help button............................................................*/
+
+.help-container {
+  display: inline-block;
+}
+
+.help-corner {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+.help-button {
+  background-color: #ffffff;
+  color: #333;
+  padding: 10px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.help-button:hover {
+  background-color: #f0f0f0;
+}
+
+/*style for HTML page..................................................*/
+
+body.help-page {
+  background-color: #fdfdfd;
+  font-family: 'Poppins', sans-serif;
+  padding: 40px;
+  color: #333;
+}
+
+.help-page h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #4b0082;
+}
+
+.help-page h2 {
+  font-size: 24px;
+  margin-top: 30px;
+  color: #6a0dad;
+}
+
+.help-page p,
+.help-page ul {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.help-page a {
+  color: #4b0082;
+  text-decoration: underline;
+}
+
+/*library button...........................................................*/
+
+.library-container {
+  display: inline-block;
+}
+
+.library-button {
+  background-color: #ffffff;
+  color: #333;
+  padding: 10px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+
+.library-button:hover {
+  background-color: #f0f0f0;
+}
