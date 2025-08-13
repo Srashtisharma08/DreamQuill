@@ -12,7 +12,7 @@ body {
   font-family: 'Poppins', sans-serif;
   height: 100vh;
   background: url('img/dreamquill-bg.png') center center/cover no-repeat;
-  transition: background-color 0.4s ease, color 0.4s ease; /* Smooth theme transitions */
+  transition: background-color 0.4s ease, color 0.4s ease; 
 }
 
 .title {
@@ -445,3 +445,4 @@ body.help-page {
 .library-button:hover {
   background-color: #f0f0f0;
 }
+
